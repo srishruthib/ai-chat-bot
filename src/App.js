@@ -11,6 +11,7 @@ function App() {
             <div className="app-container">
                 <nav className="navbar">
                     <div className="nav-links">
+                        <h1 className="app-title">Bot AI</h1>
                         <Link to="/" className="nav-link">New Chat</Link>
                         <Link to="/history" className="nav-link">Past Conversations</Link>
                     </div>

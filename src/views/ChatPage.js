@@ -105,7 +105,7 @@ const ChatPage = () => {
         const matchingResponse = sampleData.find(item =>
             lowerCaseMessage.includes(item.question.toLowerCase())
         );
-        return matchingResponse ? matchingResponse.answer : "I'm sorry, I don't understand that question.";
+        return matchingResponse ? matchingResponse.answer : "Sorry, Did not understand your query!";
     };
 
     const handleFeedback = (messageId, feedbackType) => {

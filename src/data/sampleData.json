@@ -33,5 +33,10 @@
         "id": "q7",
         "question": "hi can you help me out here",
         "answer": "As a AI Language Model, I cannot help you out!"
+    },
+    {
+        "id": "q8",
+        "question": "what are RESTful APIs?",
+        "answer": "RESTful APIs are designed around the REST (Representational State Transfer) architecture, which uses HTTP requests to access and manipulate data. They follow a stateless, client-server, cacheable communications protocol."
     }
 ]
