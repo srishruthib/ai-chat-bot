@@ -102,6 +102,15 @@ const ChatPage = () => {
 
     const getBotResponse = (userMessage) => {
         const lowerCaseMessage = userMessage.toLowerCase().trim();
+
+        // --- TEMPORARY DEBUGGING CODE STARTS HERE ---
+        // This forces the correct answer if the question is exactly "what are restful apis?"
+        // This is to isolate if the problem is with the data matching or the rendering.
+        if (lowerCaseMessage === "what are restful apis?") {
+            return "RESTful APIs are designed around the REST (Representational State Transfer) architecture, which uses HTTP requests to access and manipulate data. They follow a stateless, client-server, cacheable communications protocol.";
+        }
+        // --- TEMPORARY DEBUGGING CODE ENDS HERE ---
+
         const matchingResponse = sampleData.find(item =>
             lowerCaseMessage.includes(item.question.toLowerCase())
         );

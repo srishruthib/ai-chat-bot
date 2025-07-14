@@ -1,6 +1,6 @@
 // src/views/HistoryPage.js
 import React, { useState, useEffect } from 'react';
-// import { useParams, useNavigate } from 'react-router-dom';
+// import { useParams, useNavigate } from 'react-router-dom'; // Keep this line commented or removed
 import MessageBubble from '../components/MessageBubble';
 import RatingComponent from '../components/RatingComponent';
 import SubjectiveFeedback from '../components/SubjectiveFeedback';
@@ -10,7 +10,7 @@ import './HistoryPage.css';
 const HistoryPage = () => {
     const [conversations, setConversations] = useState([]);
     const [selectedConversation, setSelectedConversation] = useState(null);
-    // const navigate = useNavigate();
+    // const navigate = useNavigate(); // Keep this line commented or removed
 
     useEffect(() => {
         loadConversations();
@@ -42,9 +42,11 @@ const HistoryPage = () => {
         <div className="history-page">
             <div className={`conversation-list-panel ${selectedConversation ? 'hidden-on-mobile' : ''}`}>
                 <h2>Past Conversations</h2>
-                <button className="clear-history-button" onClick={handleClearHistory}>
+                {/* ---------- THIS IS THE CORRECTED BUTTON LINE ---------- */}
+                <button type="button" className="clear-history-button" onClick={handleClearHistory}>
                     Clear All History
                 </button>
+                {/* ----------------------------------------------------- */}
                 {conversations.length === 0 ? (
                     <p>No past conversations found.</p>
                 ) : (

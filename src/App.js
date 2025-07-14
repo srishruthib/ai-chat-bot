@@ -9,13 +9,14 @@ function App() {
     return (
         <Router>
             <div className="app-container">
-                <nav className="navbar">
+                {/* THIS IS THE CORRECTED HEADER TAG */}
+                <header className="navbar">
                     <div className="nav-links">
                         <h1 className="app-title">Bot AI</h1>
                         <Link to="/" className="nav-link">New Chat</Link>
                         <Link to="/history" className="nav-link">Past Conversations</Link>
                     </div>
-                </nav>
+                </header> {/* THIS IS THE CORRECTED CLOSING HEADER TAG */}
 
                 <Routes>
                     <Route path="/" element={<ChatPage />} />
