@@ -1,6 +1,6 @@
 // src/views/HistoryPage.js
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+// import { useParams, useNavigate } from 'react-router-dom';
 import MessageBubble from '../components/MessageBubble';
 import RatingComponent from '../components/RatingComponent';
 import SubjectiveFeedback from '../components/SubjectiveFeedback';
@@ -10,7 +10,7 @@ import './HistoryPage.css';
 const HistoryPage = () => {
     const [conversations, setConversations] = useState([]);
     const [selectedConversation, setSelectedConversation] = useState(null);
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     useEffect(() => {
         loadConversations();
