@@ -1,4 +1,3 @@
-// src/views/ChatPage.js
 import React, { useState, useEffect, useRef } from 'react';
 import MessageBubble from '../components/MessageBubble';
 import ChatInput from '../components/ChatInput';
@@ -74,42 +73,34 @@ const ChatPage = () => {
             return updatedMessages;
         });
 
-        // Simulate bot response
-        setTimeout(() => {
-            const botResponse = getBotResponse(text);
-            const newBotMessage = {
-                id: `msg-${Date.now()}-bot`,
-                text: botResponse,
-                timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-                type: 'bot',
-                feedback: null
-            };
+        // Simulate bot response - Removed setTimeout to fix Cypress timing issue
+        const botResponse = getBotResponse(text);
+        const newBotMessage = {
+            id: `msg-${Date.now()}-bot`,
+            text: botResponse,
+            timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+            type: 'bot',
+            feedback: null
+        };
 
-            setMessages((prevMessages) => {
-                const updatedMessages = [...prevMessages, newBotMessage];
-                const currentConversation = {
-                    id: conversationId,
-                    timestamp: updatedMessages[0].timestamp,
-                    messages: updatedMessages,
-                    overallRating: overallRating,
-                    subjectiveFeedback: subjectiveFeedback
-                };
-                updateConversationInLocalStorage(currentConversation);
-                return updatedMessages;
-            });
-        }, 500);
+        setMessages((prevMessages) => {
+            const updatedMessages = [...prevMessages, newBotMessage];
+            const currentConversation = {
+                id: conversationId,
+                timestamp: updatedMessages[0].timestamp,
+                messages: updatedMessages,
+                overallRating: overallRating,
+                subjectiveFeedback: subjectiveFeedback
+            };
+            updateConversationInLocalStorage(currentConversation);
+            return updatedMessages;
+        });
     };
 
     const getBotResponse = (userMessage) => {
         const lowerCaseMessage = userMessage.toLowerCase().trim();
 
-        // --- TEMPORARY DEBUGGING CODE STARTS HERE ---
-        // This forces the correct answer if the question is exactly "what are restful apis?"
-        // This is to isolate if the problem is with the data matching or the rendering.
-        if (lowerCaseMessage === "what are restful apis?") {
-            return "RESTful APIs are designed around the REST (Representational State Transfer) architecture, which uses HTTP requests to access and manipulate data. They follow a stateless, client-server, cacheable communications protocol.";
-        }
-        // --- TEMPORARY DEBUGGING CODE ENDS HERE ---
+        // Removed TEMPORARY DEBUGGING CODE, as sampleData.json now directly supports the test query.
 
         const matchingResponse = sampleData.find(item =>
             lowerCaseMessage.includes(item.question.toLowerCase())
