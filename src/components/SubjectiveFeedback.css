@@ -1,0 +1,50 @@
+/* src/components/SubjectiveFeedback.css */
+.subjective-feedback-container {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.subjective-feedback-container h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.feedback-textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    resize: vertical;
+    min-height: 80px;
+    margin-bottom: 10px;
+}
+
+.feedback-textarea:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.feedback-textarea:disabled {
+    background-color: #e9e9e9;
+    color: #555;
+    cursor: not-allowed;
+}
+
+.save-feedback-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s ease;
+}
+
+.save-feedback-button:hover {
+    background-color: #218838;
+}

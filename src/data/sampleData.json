@@ -1,0 +1,37 @@
+[
+    {
+        "id": "q1",
+        "question": "hi, what is the weather",
+        "answer": "I'm sorry, as an AI, I don't have real-time weather information."
+    },
+    {
+        "id": "q2",
+        "question": "hi, what is my location",
+        "answer": "As an AI, I don't have access to your personal location."
+    },
+    {
+        "id": "q3",
+        "question": "hi, what is the temperature",
+        "answer": "I'm sorry, as an AI, I don't have real-time temperature data."
+    },
+    {
+        "id": "q4",
+        "question": "hi, how are you",
+        "answer": "I'm doing great, thank you for asking! How can I assist you today?"
+    },
+    {
+        "id": "q5",
+        "question": "hi",
+        "answer": "Hi There. How can I assist you today?"
+    },
+    {
+        "id": "q6",
+        "question": "how are you today?",
+        "answer": "As an AI Language Model, I don't have the details"
+    },
+    {
+        "id": "q7",
+        "question": "hi can you help me out here",
+        "answer": "As a AI Language Model, I cannot help you out!"
+    }
+]

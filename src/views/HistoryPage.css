@@ -1,0 +1,104 @@
+/* src/views/HistoryPage.css */
+.history-page {
+    display: flex;
+    height: calc(100vh - 60px);
+    /* Adjust for navbar height */
+    width: 100%;
+    background-color: #f0f2f5;
+}
+
+.conversation-list-panel {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    border-right: 1px solid #eee;
+    background-color: #e9ebee;
+}
+
+.conversation-list-panel h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.selected-conversation-panel {
+    flex: 2;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.selected-conversation-panel h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.chat-messages-history {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 10px;
+    /* For scrollbar */
+}
+
+.no-feedback-message {
+    text-align: center;
+    color: #777;
+    padding: 20px;
+}
+
+.clear-history-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    transition: background-color 0.2s ease;
+}
+
+.clear-history-button:hover {
+    background-color: #c82333;
+}
+
+.back-to-list-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    align-self: flex-start;
+    transition: background-color 0.2s ease;
+}
+
+.back-to-list-button:hover {
+    background-color: #0056b3;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .history-page {
+        flex-direction: column;
+    }
+
+    .conversation-list-panel,
+    .selected-conversation-panel {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    .conversation-list-panel.hidden-on-mobile {
+        display: none;
+    }
+
+    .back-to-list-button {
+        display: block;
+        /* Show on mobile when a conversation is selected */
+    }
+}

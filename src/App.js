@@ -1,0 +1,28 @@
+// src/App.js
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import ChatPage from './views/ChatPage';
+import HistoryPage from './views/HistoryPage';
+import './App.css';
+
+function App() {
+    return (
+        <Router>
+            <div className="app-container">
+                <nav className="navbar">
+                    <div className="nav-links">
+                        <Link to="/" className="nav-link">New Chat</Link>
+                        <Link to="/history" className="nav-link">Past Conversations</Link>
+                    </div>
+                </nav>
+
+                <Routes>
+                    <Route path="/" element={<ChatPage />} />
+                    <Route path="/history" element={<HistoryPage />} />
+                </Routes>
+            </div>
+        </Router>
+    );
+}
+
+export default App;
