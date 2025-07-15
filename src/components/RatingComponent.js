@@ -18,15 +18,16 @@ const RatingComponent = ({ onRate, initialRating = 0, disabled = false }) => {
             <h3>Rate this conversation:</h3>
             <div className="stars">
                 {[1, 2, 3, 4, 5].map((star) => (
-                    <span
+                    <button // Changed from <span> to <button>
                         key={star}
+                        type="button" // Added type="button"
                         className={`star ${star <= (hoverRating || rating) ? 'filled' : ''} ${disabled ? 'disabled' : ''}`}
                         onClick={() => handleClick(star)}
                         onMouseEnter={() => !disabled && setHoverRating(star)}
                         onMouseLeave={() => !disabled && setHoverRating(0)}
                     >
                         ★
-                    </span>
+                    </button> // Changed from </span> to </button>
                 ))}
             </div>
         </div>
